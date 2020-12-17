@@ -4,12 +4,15 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+        style  
+            include css/global.css
+            block styles
     body
         header
             h1= header
-        main
-            h1= main
+        main#chat-container
+            //- h3= main
             div#message-container
-            form#send-container/*(action="/new_chat" method="POST")*/
+            form#send-container(action="/new_chat" method="POST")
                 input#message-input(type="text" placeholder="Something...")
                 button#send-button(type="submit") Send
