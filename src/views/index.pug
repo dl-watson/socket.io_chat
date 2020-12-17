@@ -9,3 +9,7 @@ html(lang="en")
             h1= header
         main
             h1= main
+            div#message-container
+            form#send-container/*(action="/new_chat" method="POST")*/
+                input#message-input(type="text" placeholder="Something...")
+                button#send-button(type="submit") Send
