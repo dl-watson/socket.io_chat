@@ -12,10 +12,25 @@ html(lang="en")
         header
             h1= header
         main#chat-container
-            //- h3= main
             div#message-container
-            form#send-container(action="/new_chat" method="POST")
-                input#message-input(type="text" placeholder="Something...")
-                button#send-button(type="submit") Send
+                ul#message-list
+                form#send-container(action="")
+                    input#message-input(type="text" placeholder="Enter your message...")
+                    button#send-button(type="submit") Send
     script.
-        const socket = io()
+        const socket = io();
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.querySelector('#message-input');
+            const message = input.value;
+            if (message) socket.emit('chatter', message);
+            document.querySelector('#message-input').value = "";
+            return false;
+        });
+    script.
+        socket.on('chatter', (message) => {
+            const msg_li = document.createElement('li');
+            msg_li.textContent = message;
+            msg_li.classList.add('chat-message')
+            document.querySelector('#message-list').append(msg_li);
+        })

@@ -11,6 +11,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
+  socket.on("chatter", (message) => {
+    console.log("console.log message: ", message);
+    io.emit("chatter", message);
+  });
 });
 
 http.listen(PORT, () => {
