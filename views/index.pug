@@ -9,28 +9,23 @@ html(lang="en")
             include css/global.css
             block styles
     body
-        header
-            h1= header
-        main#chat-container
-            div#message-container
-                ul#message-list
-                form#send-container(action="")
-                    input#message-input(type="text" placeholder="Enter your message...")
-                    button#send-button(type="submit") Send
-    script.
-        const socket = io();
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = document.querySelector('#message-input');
-            const message = input.value;
-            if (message) socket.emit('chatter', message);
-            document.querySelector('#message-input').value = "";
-            return false;
-        });
-    script.
-        socket.on('chatter', (message) => {
-            const msg_li = document.createElement('li');
-            msg_li.textContent = message;
-            msg_li.classList.add('chat-message')
-            document.querySelector('#message-list').append(msg_li);
-        })
+        .chat_window
+            .top_menu
+                .title Chat
+            ul.messages
+            .bottom_wrapper.clearfix
+                .message_input_wrapper
+                    input.message_input(placeholder='Type your message here...')
+                .send_message
+                    .icon
+                    .text Send
+            .message_template
+
+        //- main#chat-container
+        //-     div#message-container
+        //-         ul#message-list
+        //-         form#send-container(action="")
+        //-             input#message-input(type="text" placeholder="Enter your message...")
+        //-             button#send-button(type="submit") Send
+        script 
+            include js/socket.js
