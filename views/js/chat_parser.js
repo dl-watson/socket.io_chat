@@ -11,7 +11,7 @@ const messageParser = (messages) => {
 
     message_left.classList.add("message");
     avatar.classList.add("avatar");
-    avatar.textContent = message.user;
+    avatar.textContent = message.name;
     text_wrapper.classList.add("text_wrapper");
     text.classList.add("text");
     text.textContent = message.text;

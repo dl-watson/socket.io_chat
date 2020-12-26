@@ -54,6 +54,12 @@
     display: inline-block;
 }
 
+.avatar {
+    text-align: center;
+    color: white;
+    line-height: 57px;
+}
+
 .messages .message .text_wrapper {
     display: inline-block;
     padding: 20px;

@@ -18,7 +18,7 @@ socket.on("chatter", (message) => {
   const text = document.createElement("div");
 
   message_left.classList.add("message");
-  // avatar.classList.add("avatar");
+  avatar.classList.add("avatar");
   text_wrapper.classList.add("text_wrapper");
   text.classList.add("text");
   text.textContent = message;
