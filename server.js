@@ -8,9 +8,11 @@ const PORT = process.env.PORT || 7890;
 
 io.on("connection", (socket) => {
   console.log("a user connected");
+
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
+
   socket.on("chatter", (message) => {
     console.log("console.log message: ", message);
     io.emit("chatter", message);
