@@ -2,7 +2,13 @@
 const app = require("./lib/app");
 const pool = require("./lib/utils/pool");
 const http = require("http").createServer(app);
-const io = require("socket.io")(http, { multiplex: false });
+const io = require("socket.io")(http, {
+  multiplex: false,
+  cors: {
+    origin: "https://dry-plateau-89749.herokuapp.com/",
+    methods: ["GET", "POST"],
+  },
+});
 
 const Message = require("./lib/models/Message");
 
