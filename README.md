@@ -2,6 +2,8 @@
 
 A real-time chat application created with Socket.io, Express, Node.js, Pug, and PostgresQL. 
 
+Deployed backend: https://dry-plateau-89749.herokuapp.com/chat
+
 ### Next steps:
 * Implement session persistence with a PostgresQL database 
     * add a delete all method to the Messages model
