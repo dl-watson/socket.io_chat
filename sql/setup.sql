@@ -14,8 +14,10 @@ CREATE TABLE messages (
     text TEXT NOT NULL
 );
 
--- INSERT INTO users (name, email, hash)
--- VALUES ('dee', 'test@test.com', 'ijh2398hb2k');
+
+-- one hard-coded user for now
+INSERT INTO users (name, email, hash)
+VALUES ('dee', 'test@test.com', 'ijh2398hb2k');
 
 -- seed heroku db with 
 -- cat setup.sql | heroku pg:psql
