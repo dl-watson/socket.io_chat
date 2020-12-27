@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const app = require("./lib/app");
 const pool = require("./lib/utils/pool");
-const http = require("http").createServer(app);
+const http = require("https").createServer(app);
 const io = require("socket.io")(http, {
   multiplex: false,
   cors: {
