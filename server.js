@@ -4,6 +4,7 @@ const pool = require("./lib/utils/pool");
 const http = require("https").createServer(app);
 const io = require("socket.io")(http, {
   multiplex: false,
+  secure: true,
   cors: {
     origin: "https://dry-plateau-89749.herokuapp.com/",
     methods: ["GET", "POST"],
