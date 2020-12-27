@@ -92,11 +92,6 @@
     margin-top: -2px;
 }
 
-.messages .message .text_wrapper, .send_button {
-    font-size: 18px;
-    font-weight: 300;
-}
-
 .bottom_wrapper {
     position: relative;
     width: 100%;

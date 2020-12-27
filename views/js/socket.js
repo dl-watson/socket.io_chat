@@ -21,7 +21,5 @@ send.addEventListener("click", () => {
 });
 
 socket.on("response", (message) => {
-  console.log("response event", message);
-  // the message here contains: user_id, text and id (the messages table)
   generateHTML(message);
 });

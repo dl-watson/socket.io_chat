@@ -2,12 +2,12 @@
 /* eslint-disable no-undef */
 
 const generateHTML = (message) => {
-  const message_left = document.createElement("li");
+  const new_message = document.createElement("li");
   const avatar = document.createElement("div");
   const text_wrapper = document.createElement("div");
   const text = document.createElement("div");
 
-  message_left.classList.add("message");
+  new_message.classList.add("message");
 
   avatar.classList.add("avatar");
   avatar.textContent = message.name;
@@ -18,9 +18,11 @@ const generateHTML = (message) => {
   text.textContent = message.chat_message;
 
   text_wrapper.appendChild(text);
-  message_left.append(avatar, text_wrapper);
+  new_message.append(avatar, text_wrapper);
 
-  document.querySelector(".messages").append(message_left);
+  document.querySelector(".messages").append(new_message);
+
+  new_message.scrollIntoView({ behavior: "smooth" });
 };
 
 const messageParser = (messages) => {

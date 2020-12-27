@@ -5,11 +5,8 @@ A real-time chat application created with Socket.io, Express, Node.js, Pug, and 
 Deployed backend: https://dry-plateau-89749.herokuapp.com/chat
 
 ### Next steps:
-* Implement session persistence with a PostgresQL database 
+* Add a landing page with a user login (so that the login can be used as the username rather than needing to hard-code this data)
+    * will involve setting up a user class instance
+* clear all chats feature
     * add a delete all method to the Messages model
     * add a clear all handler to the frontend
-* Update socket.js handler to POST the chat data to the db on send
-* Add a landing page with a user login (so that the login can be used as the username rather than needing to forgo or hard-code this)
-* Refactor JS
-* Backend deployment
-* Frontend deployment
