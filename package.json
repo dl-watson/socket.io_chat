@@ -1,6 +1,9 @@
 {
   "name": "socket.io_chat",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -31,9 +34,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "heroku": "^7.47.6",
+    "lodash": "^4.17.20",
     "pg": "^8.5.1",
     "pug": "^3.0.0",
-    "socket.io": "^3.0.4",
-    "socket.io-emitter": "^3.1.1"
+    "socket.io": "^3.0.4"
   }
 }

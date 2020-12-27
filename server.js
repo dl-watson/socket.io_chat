@@ -2,7 +2,7 @@
 const app = require("./lib/app");
 const pool = require("./lib/utils/pool");
 const http = require("http").createServer(app);
-const io = require("socket.io")(http);
+const io = require("socket.io")(http, { multiplex: false });
 
 const Message = require("./lib/models/Message");
 
@@ -15,12 +15,12 @@ io.on("connection", (socket) => {
     console.log("user disconnected");
   });
 
-  socket.on("chatter", (message) => {
+  socket.on("chatter", async (message) => {
     console.log("console.log message: ", message);
 
-    Message.create(message.user_id, message.text).then((data) => {
-      socket.emit("chatter", data);
-    });
+    await Message.create(message.user_id, message.text);
+
+    Message.findById(message.user_id).then((data) => io.emit("response", data));
   });
 });
 
