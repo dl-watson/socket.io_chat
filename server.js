@@ -19,8 +19,6 @@ io.on("connection", (socket) => {
   socket.on("chatter", (message) => {
     console.log("console.log message: ", message);
 
-    console.log(message.user_id, message.text);
-
     Message.create(message.user_id, message.text).then((data) => {
       socket.emit("chatter", data);
     });
