@@ -4,7 +4,6 @@ const pool = require("./lib/utils/pool");
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
-// const Router = require("./lib/controllers/message");
 const Message = require("./lib/models/Message");
 
 const PORT = process.env.PORT || 7890;
