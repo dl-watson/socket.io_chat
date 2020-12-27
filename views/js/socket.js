@@ -3,10 +3,14 @@
 
 const socket = io();
 
-document.querySelector(".text").addEventListener("click", () => {
+document.querySelector(".send_button").addEventListener("click", () => {
+  console.log("click");
   const input = document.querySelector(".message_input");
-  const message = input.value;
-  if (message.trim() !== "") socket.emit("chatter", message);
+  const message = {
+    user_id: 1,
+    text: input.value,
+  };
+  if (message.text.trim() !== "") socket.emit("chatter", message);
   input.value = "";
   return false;
 });
@@ -21,7 +25,7 @@ socket.on("chatter", (message) => {
   avatar.classList.add("avatar");
   text_wrapper.classList.add("text_wrapper");
   text.classList.add("text");
-  text.textContent = message;
+  text.textContent = message.chat_message;
 
   text_wrapper.appendChild(text);
   message_left.append(avatar, text_wrapper);

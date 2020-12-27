@@ -14,7 +14,7 @@ const messageParser = (messages) => {
     avatar.textContent = message.name;
     text_wrapper.classList.add("text_wrapper");
     text.classList.add("text");
-    text.textContent = message.text;
+    text.textContent = message.chat_message;
 
     text_wrapper.appendChild(text);
     message_left.append(avatar, text_wrapper);

@@ -4,6 +4,9 @@ const pool = require("./lib/utils/pool");
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
+// const Router = require("./lib/controllers/message");
+const Message = require("./lib/models/Message");
+
 const PORT = process.env.PORT || 7890;
 
 io.on("connection", (socket) => {
@@ -15,7 +18,12 @@ io.on("connection", (socket) => {
 
   socket.on("chatter", (message) => {
     console.log("console.log message: ", message);
-    io.emit("chatter", message);
+
+    console.log(message.user_id, message.text);
+
+    Message.create(message.user_id, message.text).then((data) => {
+      socket.emit("chatter", data);
+    });
   });
 });
 
