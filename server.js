@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable quotes */
 const app = require("./lib/app");
 const pool = require("./lib/utils/pool");
 
