@@ -1,10 +1,8 @@
-/* eslint-disable no-console */
 const app = require("./lib/app");
 const pool = require("./lib/utils/pool");
 
 const PORT = process.env.PORT || 7890;
 
-// const http = require("https").createServer(app);
 const io = require("socket.io")(
   app.listen(PORT, () => {
     console.log(`Started on ${PORT}`);
@@ -25,12 +23,12 @@ io.on("connection", (socket) => {
     console.log("user disconnected");
   });
 
-  socket.on("chatter", async (message) => {
+  socket.on("chatter", (message) => {
     console.log("console.log message: ", message);
 
-    await Message.create(message.user_id, message.text);
-
-    Message.findById(message.user_id).then((data) => io.emit("response", data));
+    return Message.create(message.user_id, message.text)
+      .then((message) => Message.findById(message.user_id))
+      .then((data) => io.emit("response", data));
   });
 });
 

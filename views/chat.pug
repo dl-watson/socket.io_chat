@@ -8,10 +8,13 @@ block content
         .top_menu
             .title Chat
         ul.messages
-            script.
-                const messages = !{JSON.stringify(messages)}
-            script
-                include js/chat_parser.js
+            each message in messages
+                li.message
+                    .avatar= message.name
+                    .text_wrapper
+                        .text= message.chat_message
+        script
+            include js/chat_behavior.js
         .bottom_wrapper.clearfix
             .message_input_wrapper
                 input.message_input(placeholder='Type your message here...')
@@ -19,5 +22,7 @@ block content
                 .icon
                 .send_button Send
         .message_template
+    script.
+        const user = !{JSON.stringify(messages)}
     script 
         include js/socket.js
