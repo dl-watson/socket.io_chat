@@ -1,30 +1,4 @@
-.portal_window {
-    position: absolute;
-    width: calc(100% - 20px);
-    max-width: 800px;
-    height: 500px;
-    border-radius: 10px;
-    background-color: #fff;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background-color: #f8f8f8;
-    overflow: hidden;
-}
 
-.top_menu {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px 0 15px;
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-}
-
-.top_menu .title {
-    text-align: center;
-    color: #bcbdc0;
-    font-size: 20px;
-}
 
 .auth_redirect_wrapper {
     display: flex;
@@ -42,4 +16,8 @@
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

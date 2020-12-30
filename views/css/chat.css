@@ -13,19 +13,6 @@
     overflow: hidden;
 }
 
-.top_menu {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px 0 15px;
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-}
-
-.top_menu .title {
-    text-align: center;
-    color: #bcbdc0;
-    font-size: 20px;
-}
-
 .messages {
     position: relative;
     list-style: none;
