@@ -7,13 +7,17 @@ block content
     .portal_window
         .top_menu
             .title Chat
-        table.auth_wrapper
-            tr
-                th  name 
-                    input 
-            tr
-                th email 
-                    input 
-            tr
-                th password 
-                    input 
+        form#signup(action="/auth/signup" method="POST")
+            table.auth_wrapper
+                tr
+                    th  name 
+                        input(name="name")
+                tr
+                    th email 
+                        input(name="email")
+                tr
+                    th password 
+                        input(name="password")
+            button submit
+        script 
+            include js/signup.js

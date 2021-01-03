@@ -7,4 +7,14 @@ block content
     .portal_window
         .top_menu
             .title Chat
-        .auth_redirect_wrapper
+        form#signin(action="/auth/signin" method="POST")
+            table.auth_wrapper
+                tr
+                    th email 
+                        input(name="email")
+                tr
+                    th password 
+                        input(name="password")
+            button submit
+        script 
+            include js/signin.js

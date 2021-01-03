@@ -18,3 +18,14 @@ input {
     margin-left: 20px;
     border-radius: 4px;
 }
+
+button {
+    width: 100px;
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

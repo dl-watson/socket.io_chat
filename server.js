@@ -32,6 +32,10 @@ io.on("connection", (socket) => {
       .then((message) => Message.findById(message.user_id))
       .then((data) => io.emit("response", data));
   });
+
+  socket.on("sign-up", () => {});
+
+  socket.on("sign-in", () => {});
 });
 
 process.on("exit", () => {
