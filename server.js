@@ -18,6 +18,10 @@ const io = require("socket.io")(
 
 const Message = require("./lib/models/Message");
 
+setInterval(() => {
+  io.emit("data", "random number: " + Math.random().toString());
+}, 1000);
+
 io.on("connection", (socket) => {
   console.log("a user connected");
 

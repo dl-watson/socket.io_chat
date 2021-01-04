@@ -3,7 +3,9 @@
 
 const socket = io();
 
-document.querySelector(".send_button").addEventListener("click", () => {
+const send = document.querySelector(".send_button");
+
+send.addEventListener("click", () => {
   const input = document.querySelector(".message_input");
 
   const message = {
@@ -16,6 +18,12 @@ document.querySelector(".send_button").addEventListener("click", () => {
   input.value = "";
 });
 
-socket.on("response", (message) => {
-  newMessage(message);
+socket.on("response", (data) => {
+  // eslint-disable-next-line no-console
+  console.log("client-side", data);
+  newMessage(data);
+});
+
+socket.on("data", (data) => {
+  document.getElementById("data").innerHTML = "Received " + data;
 });
