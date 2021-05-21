@@ -51,7 +51,7 @@
       "always"
     ],
     "keyword-spacing": [
-      "error",
+      "never",
       {
         "before": true,
         "after": true,

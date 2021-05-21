@@ -7,13 +7,16 @@ block content
     .portal_window
         .top_menu
             .title Chat
-        .auth_redirect_wrapper
-        form(id="signin_form" action="/auth/signin", method="post") 
-            table.auth_wrapper
-                tr
-                    th email 
-                        input(type="text", name="email", value="")
-                tr
-                    th password 
-                        input(type="password", name="password", value="") 
-                button.submit_button Submit
+        .auth_wrapper 
+            div Sign in
+            form(id="signin_form" action="/auth/signin", method="post") 
+                    table
+                        tr
+                            th email 
+                                input(type="text", name="email", value="")
+                        tr
+                            th password 
+                                input(type="password", name="password", value="") 
+                        tr 
+                            th.submit
+                                button.submit_button Submit

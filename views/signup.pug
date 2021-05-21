@@ -7,15 +7,19 @@ block content
     .portal_window
         .top_menu
             .title Chat
-        form(id="signup_form" action="/auth/signup", method="post") 
-            table.auth_wrapper
-                tr
-                    th  name 
-                        input(type="text", name="name", value="")
-                tr
-                    th email 
-                        input(type="text", name="email", value="")
-                tr
-                    th password 
-                        input(type="password", name="password", value="") 
-                button.submit_button Submit
+        .auth_wrapper
+            div Sign up
+            form(id="signup_form" action="/auth/signup", method="post") 
+                table
+                    tr
+                        th  name 
+                            input(type="text", name="name", value="")
+                    tr
+                        th email 
+                            input(type="text", name="email", value="")
+                    tr
+                        th password 
+                            input(type="password", name="password", value="") 
+                    tr
+                        th.submit
+                            button.submit_button Submit

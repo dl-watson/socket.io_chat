@@ -1,13 +1,11 @@
-
-
 .auth_redirect_wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: calc(100% - 60px);
     color: rgb(31 45 45);
     font-size: 20px;
-    justify-content: center;
-    height: calc(100% - 60px);
 }
 
 .signin, .signup{

@@ -14,6 +14,11 @@ tr {
     margin: 10px;
 }
 
+.submit {
+    display: flex;
+    margin: auto;
+}
+
 input {
     margin-left: 20px;
     border-radius: 4px;
